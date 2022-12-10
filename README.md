@@ -6,6 +6,8 @@ The Sofle Choc Wireless Keyboard is a revision of the Sofle Choc keyboard by [Br
 ![Sofle Choc Wireless Keyboard](docs/images/sofle_choc_wireless_with_niceview.jpg)
 *The Sofle Choc Wireless Keyboard with an encoder and nice!view on the left half*
 
+--
+--
 
 The following 2 pictures are the same exact board:
 
@@ -18,6 +20,7 @@ The following 2 pictures are the same exact board:
 The encoders in the first picture were hot-swapped for Choc switches in the second picture.
 This allows for more build flexibility to change up your build, and as an added bonus, you can test out different rotary encoder options without soldering them in until you find one that you like.
 
+## Disclaimer
 This is a prototype keyboard, so it comes with no guarantees. There may be changes to it in the future to fix problems or add features.
 
 ## Differences from Sofle Choc (wired) keyboard
