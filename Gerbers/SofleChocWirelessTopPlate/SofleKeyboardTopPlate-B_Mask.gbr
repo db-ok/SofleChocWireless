@@ -1,0 +1,22 @@
+G04 #@! TF.GenerationSoftware,KiCad,Pcbnew,(6.0.5)*
+G04 #@! TF.CreationDate,2022-12-06T20:58:20-06:00*
+G04 #@! TF.ProjectId,SofleKeyboardTopPlate,536f666c-654b-4657-9962-6f617264546f,rev?*
+G04 #@! TF.SameCoordinates,Original*
+G04 #@! TF.FileFunction,Soldermask,Bot*
+G04 #@! TF.FilePolarity,Negative*
+%FSLAX46Y46*%
+G04 Gerber Fmt 4.6, Leading zero omitted, Abs format (unit mm)*
+G04 Created by KiCad (PCBNEW (6.0.5)) date 2022-12-06 20:58:20*
+%MOMM*%
+%LPD*%
+G01*
+G04 APERTURE LIST*
+%ADD10C,5.100000*%
+G04 APERTURE END LIST*
+D10*
+X206097200Y-61503600D03*
+X130555000Y-57495000D03*
+X206097200Y-100003600D03*
+X130355000Y-95775000D03*
+X103000000Y-119000000D03*
+M02*
