@@ -37,7 +37,6 @@ Battery life for the Low-power consumption style build will be significantly lon
 
 See the ZMK power profiler for more details: https://zmk.dev/power-profiler
 
-
 ## Bill of materials
 
 The following are needed to build the keyboard:
@@ -50,7 +49,7 @@ The following are needed to build the keyboard:
 - **10 M2 spacers/standoffs (5 per half)** - If you plan to fit your battery under the microcontroller and also use a bottom plate, 5mm spacers will be long enough so that the bottom plate doesn't touch the switch sockets. It's also possible to use 4mm spacers with M2 washers, which leaves less empty space between the PCB components and the bottom plate, and a slightly lower-profile height. (Don't forget 4 additional spacers for the display cover if you that's part of your build -- these will need to be 10 to 12mm to accommodate the height of the microcontroller and potentially the display if included)
 - **20 M2 Screws** - These are used to attach the bottom plates to the top plates (don't forget you'll need 8 more screws to use for attaching the display cover (4 for each side) if your build includes this). If using 5mm spacers or shorter to attach the bottom plate, you will want screws with a 3mm shaft so that they don't collide with each other inside the spacer.
 
-- **2 Wireless Pro Micro-compatible microcontroller boards** such as the nice!nano, nrfMicro, or BlueMicro840. I have only used the nice!nano v2 for this board, so that's the only one I know will work.
+- **2 Wireless Pro Micro-compatible microcontroller boards** such as the [nice!nano](https://nicekeyboards.com/nice-nano#find-a-store), [nrfMicro](https://github.com/joric/nrfmicro/wiki), or [BlueMicro840](http://store.jpconstantineau.com/#/item/BMicro840). I have only used the nice!nano v2 for this board, so that's the only one I know will support all the features described here.
 
 - **4x 12 pin headers (and optional sockets)** - for the microcontrollers. There are several ways to mount microcontrollers to the board. The male pin headers you most likely got with the board can be used to solder it directly to the board. This makes it hard to replace the board if it fails, it's not recommended. One option is to socket the Pro Micro using the diode legs approach [described at splitkb.com][promicrosocketing] with two 12-pin female headers. [Spring pin headers][springpinheader] are used on similar keyboards and should give a compact, non-permanent connection but are not always available. In order to fit a 301230 LiPo battery under the microcontroller, you'll need to find the 4mm tall spring pin headers, and the microcontroller will need to be mounted with the components facing up.
 
@@ -98,11 +97,11 @@ This option will work with most LiPo batteries that have a JST connector (JST PH
 
 - **Rotary encoders**
 
-    - **1 or 2 Rotary encoders EC11** - If you are not sure, take EC11E. Some other variants (EC11K) may have some additional plastic pins for and require mounting holes for them which are not included on the PCB. Some encoders do not include a push-button switch, so look for this feature when buying encoders if you would like that functionality.
+    - **1 or 2 Rotary encoders EC11** - If you're not sure, take EC11E. Some other variants (EC11K) may have some additional plastic pins and require mounting holes for them which are not included on the PCB. Some encoders do not include a push-button switch, so look for encoders that include this feature when buying if you want that functionality.
       - A few encoder options:
           - [Bourns PEC11L-4115F-S0020](https://www.digikey.com/en/products/detail/bourns-inc/PEC11L-4115F-S0020/4699168) - a low-profile option that has a push-button switch, and fairly strong detents (detents are the "tactile bumps" when you twist the knob). Has a D-shaped shaft and the base is black plastic, which looks better than most other options, which are usually green. This model comes with a mounting washer and nut, but these are not necessary.
-          - Amazon option: https://www.amazon.com/gp/product/B0177VGSQY - low profile, even shorter shaft than the above Bourns option. Has much weaker / smoother detents, making it easier to turn, but less tactile feel along with the rotation. It has a D-shaped shaft and a green plastic base.
-          - [TT Electronics EN11-HSB1AF15](https://www.digikey.com/en/products/detail/tt-electronics-bi/EN11-HSB1AF15/2408764) - Not quite as low-profile as either of the above options, but otherwise a good option. It has a smooth rotation feel, and is significantly easier to turn than the Bourns. Has a D-shaped shaft and a green plastic base. Also of note is that this model is oriented in the opposite rotation direction as the other two options in terms of the electrical signals it produces, but this is not an issue, as your keymap can be configured to simply swap the left and right rotation key mappings as needed, in order to match the key mapping to the proper rotation direction.
+          - Amazon option: https://www.amazon.com/gp/product/B0177VGSQY - low profile, even shorter shaft than the above Bourns option, but the height that the knob will sit on this one is about the same as the above Bourns low-profile encoder, so the overall height is almost identical. This one is significantly easier to turn because the detents are less forceful, but it gives less of a tactile feel during rotation. It has a D-shaped shaft and a green plastic base.
+          - [TT Electronics EN11-HSB1AF15](https://www.digikey.com/en/products/detail/tt-electronics-bi/EN11-HSB1AF15/2408764) - Not quite as low-profile as either of the above options, but otherwise a good option. It has a smooth rotation feel, and is significantly easier to turn than the Bourns. The detents have more of a rounded bump to them. Has a D-shaped shaft and a green plastic base. Also of note is that this model is oriented in the opposite rotation direction as the other two options in terms of the electrical signals it produces, but this is not an issue, as your keymap can be configured to simply swap the left and right rotation key mappings as needed, in order to match the key mapping to the proper rotation direction.
     
     - **Matching knobs** - for each encoder. Make sure the knob matches the encoder's shaft diameter, depth and shape. All of the above encoder options will fit knobs with a 6mm shaft opening. Encoder shafts can be either D-shaped or knurled, which require the corresponding type of knobs to fit them. Knobs up to 20mm in diamater will fit without bumping into any of the keys or the (optional) OLED cover. A larger knob may even be possible to install, but I have not tried one larger than 20mm, since it comes within 1 or 2mm of the the OLED cover. A larger knob will result in the encoder feeling easier to turn, which I find preferable over a smaller diameter. 
     
@@ -157,14 +156,16 @@ The order of assemby does not matter **except** for these 3 components because t
 
 These components are placed on the back of the PCB.
 
-Diodes must be oriented with the white band in the direction of the "arrow" symbol on the PCB. I typically tin one pad first, then pick up the diode with tweezers and move it into the melted solder and remove the soldering iron until it cools. After one side is attached, come back and solder the other leg. The most efficient way I've found to do this for the entire board is to:
-1. tin 1 pad of every diode location on the PCB 
-2. place the diodes down on the PCB next to the location they will be soldered, pointing in the correct direction
-3. go to each diode and solder the first pad according to the above process
+Diodes must be oriented with the white band in the direction of the "arrow" symbol on the PCB. I typically tin one pad first, then pick up the diode with tweezers and move it into the melted solder and remove the soldering iron until it cools, keeping some downward pressure on the diode so that it stays flat against the PCB. After one side is attached, come back and solder the other leg. 
+
+Considering that you will be doing the same thing 30 times on each half of the board, the most efficient way I've found to do this for the entire board is to:
+1. tin 1 pad of every diode location on the PCB with solder
+2. place all the diodes down on the PCB next to the location they will be soldered, pointing in the correct direction
+3. go to each diode and solder the first pad according to the process mentioned above
 4. come back to each of the diodes and solder the 2nd pad until they're all soldered on both pads
 5. take a careful look at each of the diodes to make sure you didn't miss any
 
-The hotswap switch sockets are the largest and easiest component to solder on the back of the PCB. They are installed on the back of the PCB facing up towards the front of the PCB, and when placed into the holes in the PCB, they will match the outline on the PCB silkscreen. Make sure they are all the way down flat on the PCB when soldering. To solder them on, heat the metal connector at the edge of the socket where it sits on top of the PCB pad, apply solder, and look for the solder to wick down to the PCB. You want a solid joint, since this may take some mechanical strain from switch installation and removal, so there's no need to be stingy with the solder on these joints.
+The hotswap switch sockets are the largest and easiest component to solder on the back of the PCB. They are installed on the back of the PCB facing up towards the front of the PCB, and when placed into the holes in the PCB, they will match the outline on the PCB silkscreen. Make sure they're completely flat on the PCB when soldering. To solder them on, heat the metal connector at the edge of the socket where it sits on top of the PCB pad, apply solder, and look for the solder to wick down to the PCB. You want a solid joint, since this may take some mechanical strain from switch installation and removal, so there's no need to be stingy with the solder on these joints. It helps to hold down the socket with some pressure from your tweezers while soldering the joints.
 
 ### Mill-Max sockets (optional)
 
@@ -216,12 +217,30 @@ Flux can be helpful for this step, as these are small surface-mount joints, but 
 
 ### Microcontroller
 
-There are various options for how the microcontroller can be installed. 
+There are various options for how the microcontroller can be installed. Here, we'll describe just a couple of those options.
 
 #### Spring Pin Header option
 One option is to use spring pin headers. Using the 4mm variety will allow you to place a 301230 LiPo battery between the microcontroller and the PCB, which is the ideal place for it to keep the build as low-profile as possible. With the other socket options, the same type of battery will fit, as long as the sockets are tall enough.
 
 If you use a 4mm spring pin header, installing the microcontroller with the components facing up will give the battery enough room to fit. However, this requires you to use the unmarked set of holes on the PCB. On the top of the PCB, the usual set of holes are marked with a black rectangle around them, which is intended for use with the microcontroller installed with components facing down, but if you install it with the components facing up, you must use the set of holes *without* with black rectangle around them, or the board will not function. For the components facing up configuration, the unmarked set of holes is the set of holes on the *left*, regardless of whether you're working on the left half or right half.
+
+With the nice!nano, the spring pin headers will stay attached to the microcontroller without soldering it. This is not the case with all microcontrollers, as it is dependent on the size of the through-holes on the microcontroller's PCB. It just so happens that the nice!nano has the right sized holes for the spring pin headers to stay attached without soldering, which is an option suggested in some guides that mention this type of header, because many pro-micro compatible boards have larger through-holes than the nice!nano. If you choose to use a nice!nano and spring pin headers, soldering is not necessary to attach them to the controller or to the keyboard PCB.
+
+To attach the spring pin headers to the nice!nano:
+ 1. You can do all of this at the very end of the build, if, for example, you want to put your 301230 LiPo battery underneath the nice!nano. If you mount the nice!nano first, you will just end up taking the nice!nano back off later to put the battery in, then putting the nice!nano back into place, which is doable, but extra work.
+ 1. Be very careful with the spring pin headers! The spring loaded pins are very small and fragile and can come out of place if you try to force them in the wrong way. And if you break them, you may not be able to fix them.
+ 1. Make sure you don't put them into the nice!nano pins for battery + and -, as these pins are too small and will damage the spring pins
+ 1. Orient the two header rows so that the small holes in the headers both face the same side before inserting them into the nice!nano
+ 1. Carefully line up the pins and insert the spring pin headers into the nice!nano
+ 1. To fully seat them, press the headers into the nice!nano. Don't press against the tiny metal pins themselves, only put pressure on the plastic part. It helps to use tweezers to very carefully squeeze the headers against the microcontroller, only putting pressure on the plastic header part. This can also be done without tweezers using your fingernails to press down on the edge of the nice!nano.
+ 1. Once the headers are firmly pressed into the nice!nano, carefully line the pins up to the holes on the keyboard PCB and place the nice!nano into position so that it's resting on the correct pins. (If your nice!nano components face up, use the non-marked sets of holes on the left. If not, use the other set. If you're trying to fit a 301230 battery under the microcontroller, face the components up and use the non-marked sets of holes. Friendly reminder that you'll need the 4mm spring pin headers to be able to fit a battery underneath the nice!nano. The 2mm or 2.5mm varieties don't give you enough room to fit one.)
+ 1. Once the pins are resting in the keyboard PCB holes, use your fingers to press down evenly on the four corners of the nice!nano until the plastic part of the header is flush with the keyboard PCB.
+ 1. If you got this far, your nice!nano is connected to your keyboard PCB with no solder ever touching the nice!nano. Rejoice!
+
+Even though mounting the nice!nano with spring pin headers will keep the nice!nano attached, it is possible to loosen it when plugging in or removing the USB cable from the microcontroller. Because of this, it's not the most stable type of mounting solution, but I still prefer to use it whenever I can. If you choose this method, make sure to check periodically that the header is fully flush with the keyboard PCB and the nice!nano, especially if you have been plugging in and unplugging the USB cable often. This is another good reason to get magnetic USB cables for your keyboard microcontrollers, since there is much less force required to attach and detach the magnetic cable than plugging a cable into the nice!nano's USB port.
+
+##### PCB design side note
+As a side note, different keyboard PCBs have different sized microcontroller holes, which means that even if the nice!nano holds onto them snugly, the PCB might not. For the Sofle and its ancestors (Lily58, Helix, Corne, Ergo42), the microcontroller holes on the PCB mostly seem to be the same, and they seem to fit the spring pin headers well.
 
 #### Socket option
 For this option, the microcontroller is installed on the top of the board, upside down and in the marked holes.
@@ -240,7 +259,7 @@ To install a socketed microcontroller using the diode leg approach [from splitkb
 
   3. Solder the legs to the microcontroller. Snip off the legs above the microcontroller.
 
-If you ever need to remove the microcontroller: do it by gently prying the board up in small increments, working your way gradually around the board. Avoid pressure on the USB connector. The diode legs are quite weak and will easily bend if you pull the microcontroller off by one side of the board, rather than loosening it evenly and gradually on both sides.
+If you ever need to remove the microcontroller: do it by gently prying the board up in small increments, working your way gradually around the board. The diode legs are quite weak and will easily bend if you pull the microcontroller off by one side of the board, rather than loosening it evenly and gradually on both sides. Avoid pressure on the USB connector.
 
 
 ### Display
