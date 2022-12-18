@@ -99,7 +99,7 @@ This option will work with most LiPo batteries that have a JST connector (JST PH
 
     - **1 or 2 Rotary encoders EC11** - If you're not sure, take EC11E. Some other variants (EC11K) may have some additional plastic pins and require mounting holes for them which are not included on the PCB. Some encoders do not include a push-button switch, so look for encoders that include this feature when buying if you want that functionality.
       - A few encoder options:
-          - [Bourns PEC11L-4115F-S0020](https://www.digikey.com/en/products/detail/bourns-inc/PEC11L-4115F-S0020/4699168) - a low-profile option that has a push-button switch, and fairly strong detents (detents are the "tactile bumps" when you twist the knob). Has a D-shaped shaft and the base is black plastic, which looks better than most other options, which are usually green. This model comes with a mounting washer and nut, but these are not necessary.
+          - [Bourns PEC11L-4115F-S0020](https://www.digikey.com/en/products/detail/bourns-inc/PEC11L-4115F-S0020/4699168) - a low-profile option that has a push-button switch, and fairly strong detents (detents are the "tactile bumps" when you twist the knob). Has a D-shaped shaft and the base is black plastic, which looks better than most other options, which are usually green. These may come with a mounting washer and nut, but they are not necessary.
           - Amazon option: https://www.amazon.com/gp/product/B0177VGSQY - low profile, even shorter shaft than the above Bourns option, but the height that the knob will sit on this one is about the same as the above Bourns low-profile encoder, so the overall height is almost identical. This one is significantly easier to turn because the detents are less forceful, but it gives less of a tactile feel during rotation. It has a D-shaped shaft and a green plastic base.
           - [TT Electronics EN11-HSB1AF15](https://www.digikey.com/en/products/detail/tt-electronics-bi/EN11-HSB1AF15/2408764) - Not quite as low-profile as either of the above options, but otherwise a good option. It has a smooth rotation feel, and is significantly easier to turn than the Bourns. The detents have more of a rounded bump to them. Has a D-shaped shaft and a green plastic base. Also of note is that this model is oriented in the opposite rotation direction as the other two options in terms of the electrical signals it produces, but this is not an issue, as your keymap can be configured to simply swap the left and right rotation key mappings as needed, in order to match the key mapping to the proper rotation direction.
     
@@ -193,7 +193,7 @@ If not using Mill-Max sockets, the encoder or Choc switch can be soldered in at 
 
 LEDs are placed on the back of the PCB. The lens should point up through the PCB so they shine into the bottom of the switch. One leg will have a diagonal cut. This cut leg should be aligned with the triangular marking on the PCB.
 
-To solder: tin one pad, place the LED and hold using tweezers, apply heat to the leg until the solder melts and the LED is flush with the board. Now the remaining legs can be soldered without the component moving. The LEDs are sensitive to heat. Let the LED cool between soldering each leg. Use the lowest heat needed for your solder.
+To solder: First, use a lower temperature setting to solder the RGB LEDs. I use 270C, but some use lower, some use higher. Tin one pad, place the LED and hold using tweezers, apply heat to the leg until the solder melts and the LED is flush with the board. Now the remaining legs can be soldered without the component moving. The LEDs are sensitive to heat. Let the LED cool between soldering each leg. Use the lowest heat needed for your solder.
 
 The LEDs are wired in one long chain. If one LED is not working, inspect the connections for that LED and the LED preceeding it. Sometimes just the output of a LED is damaged. The full chain does not need to be installed if you want to test a partially built board. The top inner-most LED closest to the top of the microcontroller is the first one in the chain, and they snake around the board, going down first, then back up on the next column, etc.
 
@@ -215,6 +215,13 @@ After this pin is soldered, solder the other pads by heating each leg and pad, t
 
 Flux can be helpful for this step, as these are small surface-mount joints, but be careful not to use too much flux, as it can get into the mechanical part of the switch and potentially cause problems for the switch contact points. If possible, use a flux pen rather than flux paste, and in small amounts.
 
+### Reset button
+
+Solder the reset button (aka tact switch). 
+
+If using a through-hole type, insert the legs of the button into the holes and use masking tape to hold it in place if needed before soldering the legs in place from the back of the PCB.
+
+If using a surface mount type, bend back the legs of the button before placing it onto the PCB. Hold the button in place using tweezers, heat up one of the pads, and feed solder into the joint, which will fill the hole and cover the leg of the button. Once one side is soldered into place, heat up the remaining pad and fill the joint with solder, covering the leg of the button.
 ### Microcontroller
 
 There are various options for how the microcontroller can be installed. Here, we'll describe just a couple of those options.
@@ -269,15 +276,6 @@ When installed, the display will overhang the microcontroller. Since there are e
 If you're using a 4-pin OLED display, use the 4 holes on the left which are outlined in a solid black outline on the PCB. If you're using a 5-pin display such as the nice!view, use a 5-pin female header, which is included with the display, and all 5 holes will be used.
 
 If you're socketing the display (recommended), install the 4 or 5 pin female header on the top of the PCB and solder it into place. Then push the display pins into the socket. You may need to trim the male header pins so the insulation on the female and male headers mate and the display sits just above the microcontroller. The downside to socketing is that the display isn't as secure in the half height socket, and as a result, turning the keyboard upside down can cause the display to tilt away from the microcontroller somewhat. If you install a display cover, this is not as much of an issue, as the cover will keep the display from moving around too much.
-
-
-### Reset button
-
-Solder the reset button (aka tact switch). 
-
-If using a through-hole type, insert the legs of the button into the holes and use masking tape to hold it in place if needed before soldering the legs in place from the back of the PCB.
-
-If using a surface mount type, bend back the legs of the button before placing it onto the PCB. Hold the button in place using tweezers, heat up one of the pads, and feed solder into the joint, which will fill the hole and cover the leg of the button. Once one side is soldered into place, heat up the remaining pad and fill the joint with solder, covering the leg of the button.
 
 ### JST connector (optional)
 

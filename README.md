@@ -12,10 +12,10 @@ The Sofle Choc Wireless Keyboard is a revision of the Sofle Choc keyboard by [Br
 The following 2 pictures are the same exact board:
 
 ![Sofle Choc Wireless Keyboard with dual encoders and RGB LEDS](docs/images/sofle-choc-wireless-with-dual-encoders-rgb.jpg)
-  *(Above: the Sofle Choc Wireless Keyboard with dual encoders and RGB LEDs)*
+  *(Above: the Sofle Choc Wireless Keyboard with RGB LEDs and dual encoders)*
 
 ![Sofle Choc Wireless Keyboard with no encoders and RGB LEDS](docs/images/sofle-choc-wireless-no-encoders-rgb.jpg)
-  *(Above: The Sofle Choc Wireless Keyboard with no encoders and RGB LEDs)*
+  *(Above: The Sofle Choc Wireless Keyboard with RGB LEDs and no encoders)*
 
 The encoders in the first picture were hot-swapped for Choc switches in the second picture.
 This allows for more build flexibility to change up your build, and as an added bonus, you can test out different rotary encoder options without soldering them in until you find one that you like.
