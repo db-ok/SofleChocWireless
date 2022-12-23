@@ -67,7 +67,9 @@ The following are needed to build the keyboard:
 
 - **8 - 10 adhesive bumpers**. Used as feet to keep the keyboard from moving. If you build with a bottom plate, get the smallest, thinnest option (~2mm or less). Otherwise, if you don't use a bottom plate, your bumpers can be installed to the bottom of the PCB and should stick out slightly past the thickness of the hotswap sockets, which are generally the thickest component on that side of the board. If not using a bottom plate, 2mm should be close to the minimum thickness you want for the bumpers. 3mm is a bit safer. 
 
-- **2x LiPo Batteries** The most compact option, and one that will fit under most socketed microcontroller installations, is the 301230 LiPo battery pack, which is 3mm thick, and just shorter than the length of the microcontroller board, so these are the most suitable for low-power consumption builds. If installing the optional JST battery connector, [these batteries](https://mkultra.click/301230-lipo-battery-with-jst-connector/) work perfectly, as they already have the JST plug attached. Other options are to solder the battery wires directly to the +/- terminals on the PCB, splice wires with a JST plug attached to them, or crimp a JST connector onto the end of the battery wires yourself. If you choose to build for maximum battery capacity (to support the high power consumption of RGB LEDs, for example), you can do this by installing longer standoffs (9mm work for this scenario) between the top and bottom plate and sandwich a larger battery between the PCB and bottom plate. This works with a 306080 LiPo battery pack, which also happens to fit between the two columns of mounting screws that attach the top plate to the bottom plate. 
+- **2x LiPo Batteries** 
+  - *The most compact option*, and one that will fit under most socketed microcontroller installations, is the 301230 LiPo battery pack, which is 3mm thick, and just shorter than the length of the microcontroller board, so these are the most suitable for low-power consumption builds. If installing the optional JST battery connector, [these batteries](https://mkultra.click/301230-lipo-battery-with-jst-connector/) work perfectly, as they already have the JST plug attached. Other options are to solder the battery wires directly to the +/- terminals on the PCB, splice wires with a JST plug attached to them, or crimp a JST connector onto the end of the battery wires yourself. 
+  - *If you choose to build for maximum battery capacity* (to support the high power consumption of RGB LEDs, for example), you can do this by installing longer standoffs (9mm work for this scenario) between the top and bottom plate and sandwich a larger battery between the PCB and bottom plate. This works with a 306080 LiPo battery pack, which also happens to fit between the two columns of mounting screws that attach the top plate to the bottom plate. To keep it from moving around, I first put a layer of masking tape with the sticky side towards the back of the PCB, sized just a little larger than the dimensions of the battery pack. Then, I created a loop of masking tape, sticky-side out, to stick the battery to the non-sticky side of the masking tape on the back of the PCB. This is just a cheap hack that seems to work fine. The bottom plate keeps the battery pretty close to the PCB in this configuration, so the tape can't really peel off and allow the battery to slide around. Keep in mind, you never want to apply pressure to LiPo battery packs, so make sure you don't get too short of standoffs that cause the bottom plate to clamp down on the battery pack against the components on the back of the main PCB. This could easily cause bad things to happen with your battery pack.
 
 *See the following for an example of how the 306080 LiPo fits into the Sofle Choc Wireless*
 ![Example with 306080 LiPo battery installed](images/build_guide_choc_wireless/soflechocwirelesswithlargebattery.jpg)
@@ -169,23 +171,22 @@ The hotswap switch sockets are the largest and easiest component to solder on th
 
 ### Mill-Max sockets (optional)
 
-Mill-Max sockets can be installed on the 5 small circular pins used for the encoder (not used for the larger oval shaped holes), and for the 2 pins used for the Choc switch that can be installed in the same position. 
+Mill-Max sockets can be installed on the 5 small circular pins used for the encoder (not used for the larger oval shaped mounting point holes), and for the 2 pins used for the Choc switch that can be installed in the same position. (See photo below)
 
-To make it easier to install these, it's best to do it before anything has been soldered to the top side of the board, so that you can lay the board flat with the Mill-Max sockets in place, and they'll be pressed firmly into the PCB. To install them, place them into the holes, then tape over them on the front side of the board to keep them in place. Masking tape works well for this.
+To make it easier to install these, it's best to do it before anything has been soldered to the top side of the PCB, so that you can lay the board flat with the Mill-Max sockets in place, and they'll be pressed firmly into the PCB. To install them, place them into the holes, then tape over them on the front side of the board to keep them in place. Masking tape works well for this.
 
 ![Masking tape over mill-max sockets](images/build_guide_choc_wireless/mill-max-sockets-with-masking-tape.jpg)
 
-Then, flip the board over, making sure they're pressed into place firmly before and during soldering, and solder them on the back side of the PCB, where the diodes and sockets are soldered. It helps to have a very small diameter solder wire (I prefer 0.5mm) to solder the sockets. Heat up the side of the socket and the through hole pad together, then feed a small amount of solder into the joint until the solder wicks around the edge of the socket and covers the PCB pad. Be careful to avoid getting any solder into the center of the socket.
+Then, flip the board over, making sure they're pressed into place firmly before and during soldering, and solder them from the back side of the PCB, where the diodes and sockets are soldered. It helps to have a very small diameter solder wire (I prefer 0.5mm) to solder the sockets. Heat up the side of the socket and the through hole pad together, then feed a small amount of solder into the joint until the solder wicks around the edge of the socket. Be careful to avoid getting any solder into the center of the socket.
 
 ![Mill-Max installation locations](images/build_guide_choc_wireless/encoder-chocswitch-millmax-locations.png)
 See above for locations where Mill-Max sockets can be installed: 
-- Pins 1 through 5 are used by the encoder
-- Pins 6 and 7 are use by the choc switch (these are reversed on the opposite half)
+- Pins 1 through 5 are used by the encoder. Mill-Max sockets can be installed here if desired.
+- Pins 6 and 7 are use by the choc switch (these are reversed on the opposite half). These can also use Mill-Max sockets.
 
-Pins 8 and 9 are mounting point attachments for the encoder. If desired, these 2 pins can be soldered after installing the encoder to provide more stability.
+Pins 8 and 9 are mounting point attachments for the encoder. These 2 pins can be soldered to the mounting legs of the encoder to provide more stability.
 
-If not using Mill-Max sockets, the encoder or Choc switch can be soldered in at a later step. If installing a Choc switch without Mill-Max sockets, do this after all other components have been installed and the top plate is put in place. Probably best to leave it until the very last step to install.
-
+If not using Mill-Max sockets, the encoder or Choc switch can be soldered in at a later step. If installing a Choc switch without Mill-Max sockets, do this after all other components have been installed and the top plate is put in place. Probably best to leave the switch until the very last step to install if you choose this option.
 
 ### The LEDs (optional)
 
