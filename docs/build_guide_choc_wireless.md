@@ -166,7 +166,7 @@ The order of assemby does not matter **except** for these 3 components because t
 
 These components are placed on the back of the PCB.
 
-Diodes must be oriented with the white band in the direction of the "arrow" symbol on the PCB. I typically tin one pad first, then pick up the diode with tweezers and move it into the melted solder and remove the soldering iron until it cools, keeping some downward pressure on the diode so that it stays flat against the PCB. After one side is attached, come back and solder the other leg. 
+Diodes must be oriented with the white band in the direction of the "arrow" symbol on the PCB. I typically tin one pad first, then pick up the diode with tweezers and move it into the melted solder and remove the soldering iron until the solder cools, keeping some downward pressure on the diode so that it stays flat against the PCB. After one pad is soldered, come back and solder the other pad. 
 
 Considering that you will be doing the same thing 30 times on each half of the board, the most efficient way I've found to do this for the entire board is to:
 1. tin 1 pad of every diode location on the PCB with solder
