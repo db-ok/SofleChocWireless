@@ -21,19 +21,26 @@ The Sofle Choc Wireless was designed by db, and is closely based on the Sofle Ch
 
 This keyboard can be built differently, depending on your preferences. The following is a simplified version of the two styles that I have built this board and the major components that differ between them:
 
-|Component|Low-power consumption/Lowest profile|High battery capacity|
+|*Component*|Low-power consumption/Lowest profile|High battery capacity|
 |---------------|---------------|---------------|
-|Battery|301230 LiPo|306080 LiPo|
-|Bottom plate|Optional|Required|
-|Display|nice!view (or none)|OLED or nice!view (still optional)|
-|RGB LEDs|Not recommended|Go for it :)|
-|Bottom plate standoffs|4 or 5mm|9mm|
+|*Battery*|301230 LiPo|306080 LiPo|
+|*Bottom plate*|Optional|Required|
+|*Display*|nice!view (or none)|OLED or nice!view (still optional)|
+|*RGB LEDs*|Not recommended|Go for it :)|
+|*Bottom plate spacers/standoffs*|5mm (or none, if no bottom plate)|9mm|
 
 *Note: it is possible to use an OLED display with the Low-power consumption options instead of the nice!view, but this will drain the battery significantly quicker*
 
+These are just a couple of the options you can choose from, but these are certainly not the only ways to build this keyboard. Others may choose to combine elements of both, for example, building without a bottom plate, but keeping the RGB LEDs. This option also means that you must consider your firmware settings carefully, such as enabling the ZMK config option that shuts off the LEDs when the keyboard is not plugged into USB: `CONFIG_ZMK_RGB_UNDERGLOW_AUTO_OFF_USB = y`. Otherwise, the battery life will be so short that the keyboard is not usable.
+
 ### Battery life considerations
 
-Battery life for the Low-power consumption style build will be significantly longer than the other style, assuming your battery has around 100mAh capacity, which is common for the 301230 size of LiPo battery pack. With the High battery capacity build option, RGB LEDs installed, and a 306080 LiPo battery, the most you can get is about a couple of days worth of actual usage with a pretty conservative brightness level (<60%), and using a configuration that shuts off the LEDs after a reasonably short timeout period (5 min or so). That is assuming the 306080 LiPo has around 2500mAh capacity, which is the type that I've used for this style of build. Larger batteries will also take longer to charge, so using the higher charging rate jumper on the nice!nano v2 is recommended for this style of build as well. Without the higher charging rate, the charge current is 100mA, so a 2500mAh battery will take roughly 25 hours to charge :(   With the higher charging rate (500mA), a 2500mAh battery would charge in closer to 5 hours from completely empty, so if used for a full day, then plugged in for charging a couple hours at the end of the day, your charge will always be at a pretty comfortable level. This has been my experience, but as always, yours may differ, and this style of build certainly has its compromises -- mostly for the sake of RGB, as the LEDs are by far the biggest power consumer.
+- Battery life for the Low-power consumption style build will be significantly longer than the other style, assuming your battery has around 100mAh capacity, which is common for the 301230 size of LiPo battery pack. Getting around 7 days of battery life on the central half is realistic with this style of build, with the peripheral side likely to get more than that by a significant amount.
+
+- With the High battery capacity build option, RGB LEDs installed, and a 306080 LiPo battery, the most you can get is about a couple of days worth of actual usage with a pretty conservative brightness level (<50%), and using a configuration that shuts off the LEDs after a reasonably short timeout period (5 min or so). That is assuming the 306080 LiPo has around 2500mAh capacity, which is the type that I've used for this style of build.
+  - Larger batteries also take longer to charge, so using the higher charging current jumper on the nice!nano v2 is recommended for this style of build as well. Without the higher charging current, the charge current is 100mA, so a 2500mAh battery could take up to 25 hours to charge :(   With the higher charging current (500mA), a 2500mAh battery would charge in closer to 5 hours from completely empty. If used for a full day, then plugged in to charge for a couple hours at the end of the day, your charge should always be at a pretty comfortable level.
+
+  - This has been my experience, but as always, yours may differ, and this style of build certainly has its compromises -- mostly for the sake of RGB, as the LEDs are by far the biggest power consumer.
 
 See the ZMK power profiler for more details: https://zmk.dev/power-profiler
 
@@ -46,8 +53,8 @@ The following are needed to build the keyboard:
 - **2 top plates** - Send the zip `Gerbers\SofleChocWirelessTopPlate\SofleChocWirelessTopPlate.zip` to a PCB fabrication service. The top plate holds the switches in place. The top plate should be 1.2mm thick. Otherwise I used JLCPCB's default settings, only customizing the PCB color.
 
 - **2 bottom plate PCBs (optional)** - `Gerbers\SofleChocWirelessBottomPlate\SofleChocWirelessBottomPlate.zip`. The bottom plates can be 1.6mm or 1.2mm thick PCBs, either will work.
-- **10 M2 spacers/standoffs (5 per half)** - If you plan to fit your battery under the microcontroller and also use a bottom plate, 5mm spacers will be long enough so that the bottom plate doesn't touch the switch sockets. It's also possible to use 4mm spacers with M2 washers, which leaves less empty space between the PCB components and the bottom plate, and a slightly lower-profile height. (Don't forget 4 additional spacers for the display covers if that's part of your build -- these will need to be 10 to 12mm to accommodate the height of the microcontroller and potentially the display, if included)
-- **20 M2 Screws** - These are used to attach the bottom plates to the top plates (don't forget you'll need 8 more screws to use for attaching the display cover (4 for each side) if your build includes this). If using 5mm spacers or shorter to attach the bottom plate, you will want screws with a 3mm shaft so that they don't collide with each other inside the spacer.
+- **10 M2 spacers/standoffs (female/female threaded: 5 per half)** - If you plan to fit your battery under the microcontroller and also use a bottom plate, 5mm spacers will be long enough so that the bottom plate doesn't touch the switch sockets. (Don't forget 4 additional spacers for the display covers if that's part of your build -- these will need to be 10 to 12mm to accommodate the height of the microcontroller and potentially the display, if included)
+- **20 M2 Screws** - These are used to attach the bottom plates to the top plates (don't forget you'll need 8 more screws to use for attaching the display cover (4 for each side) if your build includes this). If using 5mm spacers or shorter to attach the bottom plate, you will want screws with a 3mm or 4mm shaft so that they don't collide with each other inside the spacer.
 
 - **2 Wireless Pro Micro-compatible microcontroller boards** such as the [nice!nano](https://nicekeyboards.com/nice-nano#find-a-store), [nrfMicro](https://github.com/joric/nrfmicro/wiki), or [BlueMicro840](http://store.jpconstantineau.com/#/item/BMicro840). I have only used the nice!nano v2 for this board, so that's the only one I know will support all the features described here.
 
@@ -65,7 +72,8 @@ The following are needed to build the keyboard:
 
 - **2 SPDT SMT slide switches** for battery power on/off switches. This is a common style, similar to the ones found [here](https://www.digikey.com/en/products/detail/nidec-copal-electronics/CUS-12TB/1124222), [here](https://mkultra.click/alps-ssss811101/), or [here](https://www.amazon.com/gp/product/B00E6QJ6YK).
 
-- **8 - 10 adhesive bumpers**. Used as feet to keep the keyboard from moving. If you build with a bottom plate, get the smallest, thinnest option (~2mm or less). Otherwise, if you don't use a bottom plate, your bumpers can be installed to the bottom of the PCB and should stick out slightly past the thickness of the hotswap sockets, which are generally the thickest component on that side of the board. If not using a bottom plate, 2mm should be close to the minimum thickness you want for the bumpers. 3mm is a bit safer. 
+- **8 - 10 adhesive bumpers**. Used as feet to keep the keyboard from moving. If you build with a bottom plate, get the smallest, thinnest option (~2mm or less), and I also recommend getting flat top screws with the thinnest head possible, to reduce the chance of the screws bottoming out past the thickness of the rubber feet.
+This could cause the screws to scratch up the surface that the keyboard is on. Otherwise, if you don't use a bottom plate, your bumpers can be installed to the bottom of the PCB and should stick out slightly past the thickness of the hotswap sockets, which are generally the thickest component on that side of the board. If not using a bottom plate, 2mm should be close to the minimum thickness you want for the bumpers. 3mm is a bit safer. 
 
 - **2x LiPo Batteries** 
   - *The most compact option*, and one that will fit under most socketed microcontroller installations, is the 301230 LiPo battery pack, which is 3mm thick, and just shorter than the length of the microcontroller board, so these are the most suitable for low-power consumption builds. If installing the optional JST battery connector, [these batteries](https://mkultra.click/301230-lipo-battery-with-jst-connector/) work perfectly, as they already have the JST plug attached. Other options are to solder the battery wires directly to the +/- terminals on the PCB, splice wires with a JST plug attached to them, or crimp a JST connector onto the end of the battery wires yourself. 
@@ -92,9 +100,9 @@ This option will work with most LiPo batteries that have a JST connector (JST PH
 
   - **OLED Covers**
 
-    - **2 OLED covers cut from acrylic** - Technically optional, but displays seem pretty fragile without them. The files for these are in the `SofleChocWireless/Case/OledCover` folder. The same OLED cover from the Sofle RGB also works: this is option 1. Option 2 is modified to give more space for a slightly larger encoder knob, but otherwise is functionally identical. These are typically laser-cut from 3mm thick acrylic.
-    - **4 M2 spacers to mount the OLED covers*** - (2 for each). The height of these depends on how high your microcontroller sits off the PCB, and ultimately the height of the display. 10mm spacers will work for most configurations, but 12mm may be required if using a socketed microcontroller with a display.
-    - **8 M2 screws** - to attach the OLED covers and spacers to the PCB. 5mm to 6mm shaft M2 screws work well for this, as the acrylic is 3mm thick.
+    - **2 OLED covers cut from acrylic** - Technically optional, but displays seem pretty fragile to me without them. The files for these are in the `SofleChocWireless/Case/OledCover` folder. The same OLED cover from the Sofle RGB also works: this is the file called `oled-cover-option1` in either svg or dxf format. `oled-cover-option2` is modified to give more space for a slightly larger encoder knob, but otherwise is functionally identical. These are typically laser-cut from 3mm thick acrylic.
+    - **4 M2 spacers/standoffs (female/female threaded) to mount the OLED covers*** - (2 for each). The height of these depends on how high your microcontroller sits off the PCB, and ultimately the height of the display. 10mm spacers will work for most configurations, but 12mm may be required if using a socketed microcontroller with a display.
+    - **8 M2 screws** - to attach the OLED covers and spacers to the PCB. 5mm to 6mm shaft M2 screws work well for this, as the acrylic used for the display covers is typically 3mm thick.
 
 
 - **Rotary encoders**
@@ -325,11 +333,11 @@ It's also possible to solder all pins of the encoder and leave out the Mill-Max 
 
 - Snap the remaining switches into the top plate pressing into the sockets.
 
-- There are no standoff between the PCB and top plate
+- There are no standoffs between the PCB and top plate
 
 - Place the encoder knob on the shaft. Tighten the set screw with a hex key. A small screwdriver for glasses may do in a pinch.
 
-- Optionally add OLED covers
+- Optionally add display covers (aka OLED covers)
 
 - Put at least 4 adhesive rubber feet, aka bumpons, in the corners so the keyboard doesn't move when you type. I find that it helps to have 5 total: 1 in each of the far corners, then another one along the top edge where there's a gentle corner (close to where the 8 and 9 keys are). Also, on the inner side of the board, the side where the microcontroller is, it feels more stable if you line up the 2 bumpons with each other vertically, instead of putting them as close to the far corners of the PCB as possible.
 

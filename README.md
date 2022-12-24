@@ -37,13 +37,10 @@ This is a prototype keyboard, so it comes with no guarantees. There may be chang
 - Changed the microcontroller pin connected to the RGB LED data line
 
 ## Encoder Support
-The PCB supports a rotary encoder or a Choc switch in the same location on either or both halves. It's possible to install Mill-Max sockets for the encoder pins, allowing for hot-swapping the rotary encoder. In the same position, it's also possible to install Mill-Max sockets for the Choc switch pins. It's also possible to leave out any Mill-Max sockets and hard-solder either a rotary encoder or a Choc switch into either side (or both). 
+The PCB supports a rotary encoder or a Choc switch in the same location on either half, and *either one can use Mill-Max sockets*. If you don't want to use Mill-Max sockets, you can hard-solder either a rotary encoder or a Choc switch into either side.
 
 *Rotary encoder support on the peripheral side is dependent on firmware, but there are some PRs in the ZMK repository that will reportedly support encoders on both sides of a split keyboard, although it is not officially supported by ZMK.*
 
-With the Mill-Max sockets installed in the encoder/choc switch combination footprint, this enables hot-swapping of encoder to Choc switch or vice versa on either half.
-
-If hot-swapping is not required, the encoder or switch can also be soldered in as usual. If planning to install the Choc switch in this location, it's highly recommended to use the Mill-Max sockets for the Choc switch pin connections, as soldering a Choc switch here will not allow for removing the top plate, which would normally be possible with a fully hot-swap socketed board.
 ## Display Support
 The PCB supports either a 4-pin OLED screen commonly found on DIY keyboards, or the 5-pin [nice!view](https://nicekeyboards.com/docs/nice-view/) low power usage display.
 
