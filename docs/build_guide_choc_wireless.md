@@ -169,25 +169,21 @@ These components are placed on the back of the PCB.
 Diodes must be oriented with the white band in the direction of the "arrow" symbol on the PCB. I typically tin one pad first, then pick up the diode with tweezers and move it into the melted solder and remove the soldering iron until the solder cools, keeping some downward pressure on the diode so that it stays flat against the PCB. After one pad is soldered, come back and solder the other pad. 
 
 Considering that you will be doing the same thing 30 times on each half of the board, the most efficient way I've found to do this for the entire board is to:
-1. tin 1 pad of every diode location on the PCB with solder
-2. place all the diodes down on the PCB next to the location they will be soldered, pointing in the correct direction
-3. go to each diode and solder the first pad according to the process mentioned above
-4. come back to each of the diodes and solder the 2nd pad until they're all soldered on both pads
-5. take a careful look at each of the diodes to make sure you didn't miss any
+1. Tin 1 pad of every diode location on the PCB with solder
+2. Place all the diodes down on the PCB next to the location they will be soldered, pointing in the correct direction
+3. Go to each diode and solder the first pad according to the process mentioned above
+4. Come back to each of the diodes and solder the 2nd pad until they're all soldered on both pads
+5. Take a careful look at each of the diodes to make sure you didn't miss any
 
 The hotswap switch sockets are the largest and easiest component to solder on the back of the PCB. They are installed on the back of the PCB facing up towards the front of the PCB, and when placed into the holes in the PCB, they will match the outline on the PCB silkscreen. Make sure they're completely flat on the PCB when soldering. To solder them on, heat the metal connector at the edge of the socket where it sits on top of the PCB pad, apply solder, and look for the solder to wick down to the PCB. You want a solid joint, since this may take some mechanical strain from switch installation and removal, so there's no need to be stingy with the solder on these joints. It helps to hold down the socket with some pressure from your tweezers while soldering the joints.
 
 ### Mill-Max sockets (optional)
 
-Mill-Max sockets can be installed on the 5 small circular pins used for the encoder (not used for the larger oval shaped mounting point holes), and for the 2 pins used for the Choc switch that can be installed in the same position. (See photo below)
-
-To make it easier to install these, it's best to do it before anything has been soldered to the top side of the PCB, so that you can lay the board flat with the Mill-Max sockets in place, and they'll be pressed firmly into the PCB. To install them, place them into the holes, then tape over them on the front side of the board to keep them in place. Masking tape works well for this.
-
-![Masking tape over mill-max sockets](images/build_guide_choc_wireless/mill-max-sockets-with-masking-tape.jpg)
-
-Then, flip the board over, making sure they're pressed into place firmly before and during soldering, and solder them from the back side of the PCB, where the diodes and sockets are soldered. It helps to have a very small diameter solder wire (I prefer 0.5mm) to solder the sockets. Heat up the side of the socket and the through hole pad together, then feed a small amount of solder into the joint until the solder wicks around the edge of the socket. Be careful to avoid getting any solder into the center of the socket.
+7 Mill-Max sockets can be installed on each half, for a total of 14 for both halves. They can be installed on the 5 small circular pins used for the encoder (not used for the larger oval shaped mounting point holes), and for the 2 pins used for the Choc switch that can be installed in the same position. (See photo below)
 
 ![Mill-Max installation locations](images/build_guide_choc_wireless/encoder-chocswitch-millmax-locations.png)
+(*Above: view of the Mill-Max locations from the bottom of the PCB*)
+
 See above for locations where Mill-Max sockets can be installed: 
 - Pins 1 through 5 are used by the encoder. Mill-Max sockets can be installed here if desired.
 - Pins 6 and 7 are use by the choc switch (these are reversed on the opposite half). These can also use Mill-Max sockets.
@@ -195,6 +191,20 @@ See above for locations where Mill-Max sockets can be installed:
 Pins 8 and 9 are mounting point attachments for the encoder. These 2 pins can be soldered to the mounting legs of the encoder to provide more stability.
 
 If not using Mill-Max sockets, the encoder or Choc switch can be soldered in at a later step. If installing a Choc switch without Mill-Max sockets, do this after all other components have been installed and the top plate is put in place. Probably best to leave the switch until the very last step to install if you choose this option.
+
+To make it easier to install these, it's best to do it before anything has been soldered to the top side of the PCB, so that you can lay the board flat with the Mill-Max sockets in place, and they'll be pressed firmly into the PCB. 
+
+**To install the Mill-Max sockets:**
+
+1. With the PCB face up, place them into the holes
+2. Then, tape over them on the front side of the board to keep them in place. Masking tape works well for this.
+
+![Masking tape over mill-max sockets](images/build_guide_choc_wireless/mill-max-sockets-with-masking-tape.jpg)
+(*Above: view of the top of the PCB with tape over the Mill-Max sockets before soldering*)
+
+3. Then, flip the board over, making sure they're pressed into place firmly before and during soldering, and solder them from the back side of the PCB, where the diodes and sockets are soldered. It helps to have a very small diameter solder wire (I prefer 0.5mm) to solder the sockets. Heat up the side of the socket and the through hole pad together, then feed a small amount of solder into the joint until the solder wicks around the edge of the socket. Be careful to avoid getting any solder into the center of the socket.
+
+
 
 ### The LEDs (optional)
 
@@ -204,19 +214,25 @@ LEDs are placed on the back of the PCB. The lens should point up through the PCB
 
 To solder: First, use a lower temperature setting to solder the RGB LEDs. I use 270C, but some use lower, some use higher. Tin one pad, place the LED and hold using tweezers, apply heat to the leg until the solder melts and the LED is flush with the board. Now the remaining legs can be soldered without the component moving. The LEDs are sensitive to heat. Let the LED cool between soldering each leg. Use the lowest heat needed for your solder.
 
-The LEDs are wired in one long chain. If one LED is not working, inspect the connections for that LED and the LED preceeding it. Sometimes just the output of a LED is damaged. The full chain does not need to be installed if you want to test a partially built board. The top inner-most LED closest to the top of the microcontroller is the first one in the chain, and they snake around the board, going down first, then back up on the next column, etc.
+The LED control circuit is in one long chain. If one LED is not working, inspect the connections for that LED and the LED preceeding it. Sometimes just the output of a LED is damaged. The full chain does not need to be installed if you want to test a partially built board. The top inner-most LED closest to the top of the microcontroller is the first one in the chain, and they snake around the board, going down first, then back up on the next column, etc.
 
 ![LED](images/build_guide_choc_wireless/sofle-choc-wireless-rgb-led-chain.png)
 
 ### Display Jumpers
 
-![Display Jumpers](images/build_guide_choc_wireless/display-jumpers.png)
+![Display Jumpers - before](images/build_guide_choc_wireless/display-jumpers.png)
 
-Now we move to the front of the PCB.
+The jumpers in the above photo should be bridged if using a display. The jumpers may not be accessible later in the build depending on how the microcontroller is attached. Bridge the jumpers on the *top* side of the board, the opposite side from where the sockets and diodes are soldered. It's fine to bridge all 5 jumpers, even if using a 4-pin OLED -- this will not cause issues.
 
-The jumpers in the photo should be bridged if using a display. The jumpers may not be accessible later in the build depending on how the microcontroller is attached. Bridge the jumpers on the *top* side of the board, the opposite side from where the sockets and diodes are soldered. It's fine to bridge all 5 jumpers, even if using a 4-pin OLED -- this will not cause any issues.
+This is how the jumpers should look after bridging them:
 
-### Power switch
+![Display Jumpers - after](images/build_guide_choc_wireless/display-jumpers-soldered.png)
+
+### Power switch and reset button
+
+![Power and reset buttons](images/build_guide_choc_wireless/ready-for-power-reset.png)
+
+#### Power Switch
 
 The power switch has 2 small bumps that fit into locating holes in the PCB, which help keep it in place while soldering. Tin one pad on the PCB, then put the switch in place over it. Put some downward pressure on the switch with tweezers, then press down on the switch leg that's sitting on the tinned pad with the iron until the switch leg sinks down fully into the solder, then remove the iron.
 
@@ -224,13 +240,21 @@ After this pin is soldered, solder the other pads by heating each leg and pad, t
 
 Flux can be helpful for this step, as these are small surface-mount joints, but be careful not to use too much flux, as it can get into the mechanical part of the switch and potentially cause problems for the switch contact points. If possible, use a flux pen rather than flux paste, and in small amounts.
 
-### Reset button
+#### Reset button
 
 Solder the reset button (aka tact switch). 
 
-If using a through-hole type, insert the legs of the button into the holes and use masking tape to hold it in place if needed before soldering the legs in place from the back of the PCB.
+If using a through-hole type, insert the legs of the button into the holes and use masking tape to hold it in place if needed before soldering the legs in place from the back of the PCB. (This option is not pictured in this guide.)
 
-If using a surface mount type, bend back the legs of the button before placing it onto the PCB. Hold the button in place using tweezers, heat up one of the pads, and feed solder into the joint, which will fill the hole and cover the leg of the button. Once one side is soldered into place, heat up the remaining pad and fill the joint with solder, covering the leg of the button.
+If using a surface mount type, bend back the legs of the button to around 45 degrees before placing it onto the PCB.
+
+![Power switch soldered, ready for reset button](images/build_guide_choc_wireless/powerswitch-done-reset-next.png)
+
+*The above shows the reset button in place before soldering. The power switch has already been soldered.*
+
+With the button placed onto the PCB, heat up one of the pads and feed solder into the joint until solder fills the hole and covers the leg of the button. Once one side is soldered into place, heat up the remaining pad and fill the joint with solder, covering the leg of the button.
+
+
 ### Microcontroller
 
 There are various options for how the microcontroller can be installed. Here, we'll describe just a couple of those options.
