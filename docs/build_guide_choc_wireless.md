@@ -257,14 +257,16 @@ With the button placed onto the PCB, heat up one of the pads and feed solder int
 
 ### Microcontroller
 
-There are various options for how the microcontroller can be installed. Here, we'll describe just a couple of those options.
+There are various options for how the microcontroller can be installed. Here, we'll describe just a couple of those options:
+1. The Sprint Pin Header option
+2. The Socket option
 
 #### Spring Pin Header option
 One option is to use spring pin headers. Using the 4mm variety will allow you to place a 301230 LiPo battery between the microcontroller and the PCB, which is the ideal place for it to keep the build as low-profile as possible. With the other socket options, the same type of battery will fit, as long as the sockets are tall enough.
 
 If you use a 4mm spring pin header, installing the microcontroller with the components facing up will give the battery enough room to fit. However, this requires you to use the unmarked set of holes on the PCB. On the top of the PCB, the usual set of holes are marked with a black rectangle around them, which is intended for use with the microcontroller installed with components facing down, but if you install it with the components facing up, you must use the set of holes *without* with black rectangle around them, or the board will not function. For the components facing up configuration, the unmarked set of holes is the set of holes on the *left*, regardless of whether you're working on the left half or right half.
 
-With the nice!nano, the spring pin headers will stay attached to the microcontroller without soldering it. This is not the case with all microcontrollers, as it is dependent on the size of the through-holes on the microcontroller's PCB. It just so happens that the nice!nano has the right sized holes for the spring pin headers to stay attached without soldering, which is an option suggested in some guides that mention this type of header, because many pro-micro compatible boards have larger through-holes than the nice!nano. If you choose to use a nice!nano and spring pin headers, soldering is not necessary to attach them to the controller or to the keyboard PCB.
+With the nice!nano, the spring pin headers will stay attached to the microcontroller without soldering it. This is not the case with all microcontrollers, as it is dependent on the size of the through-holes on the microcontroller's PCB. It just so happens that the nice!nano has the right sized holes for the spring pin headers to stay attached without soldering. Soldering the spring pin headers to the microcontroller board is an option suggested in some guides that mention this type of header, because many pro-micro compatible boards have larger through-holes, so the spring pin headers don't engage into the holes otherwise. If you choose to use a nice!nano and spring pin headers, soldering is not necessary to attach them to the controller or to the keyboard PCB. Keep in mind with this option, though, it's possible to dislodge the microcontroller with an accidental bump or with the force of inserting / removing the USB cable if it's not carefully pushed straight into the connector.
 
 To attach the spring pin headers to the nice!nano:
  1. You can do all of this at the very end of the build, if, for example, you want to put your 301230 LiPo battery underneath the nice!nano. If you mount the nice!nano first, you will just end up taking the nice!nano back off later to put the battery in, then putting the nice!nano back into place, which is doable, but extra work.
@@ -293,13 +295,13 @@ Double-check your work here. This step is hard to reverse if a mistake is made.
 
 To install a socketed microcontroller using the diode leg approach [from splitkb.com][promicrosocketing]:
 
-  1. Install the 12-pin female headers on the top of the board in the outlined through holes. Use some tape to temporarily tack them in place. Flip the board over onto a flat, hard surface. While soldering the first pins, push down on the PCB to ensure the headers are perpendicular and fully seated.
+  1. To solder the headers to the PCB, first place the 12-pin female headers on the top of the board in the outlined through holes. Use some tape to temporarily tack them in place. Flip the board over onto a flat, hard surface. While soldering the first pins, push down on the PCB to ensure the headers are perpendicular and fully seated.
 
-  2. Flip the board upright again. Optionally place some tape over the sockets to prevent solder from seeping down into the sockets. Masking tape works fine for this. Place the microcontroller upside down on top. Push diodes though the microcontroller holes and through the tape so they're seated into the socket below. Using pliers to press the diode legs in will reduce the chances of stabbing yourself with a sharp diode leg while doing this.
+  2. To install the diode legs, first flip the board upright again. Place some tape over the sockets before inserting the diode legs to prevent solder from seeping down into the sockets in the next step. Masking tape works fine for this. Place the microcontroller upside down on top of the sockets. Push the diode legs though the microcontroller holes and through the tape so they're seated into the socket below. It helps to use pliers to press the diode legs in, so you reduce the chances of stabbing yourself with a sharp diode leg while doing this.
 
   3. Solder the legs to the microcontroller. Snip off the legs above the microcontroller.
 
-If you ever need to remove the microcontroller: do it by gently prying the board up in small increments, working your way gradually around the board. The diode legs are quite weak and will easily bend if you pull the microcontroller off by one side of the board, rather than loosening it evenly and gradually on both sides. Avoid pressure on the USB connector.
+If you ever need to remove the microcontroller: do it by gently prying the board up in small increments, working your way gradually around the board. Don't be surprised if removing it is not easy, though -- the sockets can have a surprisingly strong grip on the diode legs. However, the diode legs themselves are very flexible and will easily bend if you pull the microcontroller off by one side of the board, rather than loosening it evenly and gradually on both sides. Avoid pressure on the USB connector. 
 
 
 ### Display
