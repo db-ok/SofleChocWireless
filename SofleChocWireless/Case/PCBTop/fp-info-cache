@@ -1,4 +1,4 @@
-20252747918271362
+20259462378069319
 Audio_Module
 Reverb_BTDR-1H
 Digital Reverberation Unit, http://www.belton.co.kr/inc/downfile.php?seq=17&file=pdf (footprint from http://www.uk-electronic.de/PDF/BTDR-1.pdf)
@@ -85806,6 +85806,27 @@ varistor SIOV
 2
 2
 myLibrary
+BPC_4PIN
+
+
+0
+8
+4
+myLibrary
+BatteryClip_Keystone254_Protected
+
+
+0
+4
+2
+myLibrary
+BatteryClip_Keystone254_Unprotected
+
+
+0
+4
+2
+myLibrary
 BatteryHolder_Keystone_1042_1x18650
 Battery holder for 18650 cylindrical cells http://www.keyelco.com/product.cfm/product_id/918
 18650 Keystone 1042 Li-ion
@@ -85819,6 +85840,13 @@ connector JST PH top entry
 0
 2
 2
+myLibrary
+M2_Screw_Mounting_Hole_NPTH
+
+
+0
+0
+0
 myLibrary
 SW_E-Switch_EG1224_SPDT_Angled_dpb
 E-Switch slide switch, EG series, SPDT, right angle, http://spec_sheets.e-switch.com/specs/P040042.pdf

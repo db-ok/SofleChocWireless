@@ -379,8 +379,9 @@ The Sofle Choc Wireless uses [ZMK Firmware][zmk_firmware].
 
 The ZMK documentation has a guide for building and customizing your firmware, including customizing your keymap, setting your configuration options based on what devices and settings you use for your build, etc.: [ZMK Setup Guide][zmk_setup_guide]
 
-This board uses the same layout as the Sofle keyboard that is already part of the ZMK repository, so your configurations can be done for the Sofle Choc Wireless keyboard as if it was the standard Sofle keyboard. The main differences for setting up your firmware build are whether you want to enable RGB LEDs and/or use the nice!view instead of the OLED display. 
+This board uses the same layout as the Sofle keyboard that is already part of the ZMK repository, so your configurations can be done for the Sofle Choc Wireless keyboard as if it was the standard Sofle keyboard. The main differences for setting up your firmware build are whether you want to enable RGB LEDs and/or use the nice!view instead of the OLED display, which is the default supported display for the Sofle in ZMK. 
 
+### nice!view setup ###
  To use the nice!view, you would need to add the nice_view_adapter and nice_view to your build config, so the build.yaml file would look something like this (*assuming you are building for the nice!nano v2 as your microcontroller board*): 
 
 ```
@@ -392,7 +393,16 @@ include:
     shield: sofle_right nice_view_adapter nice_view
 ```
 
-For setting up RGB LEDs, the controller pin used for these corresponds to pin 8 of the nice!nano (Arduino Digital 0 / D0 Pro Micro pin), so if using a nice!nano, the LED config line you would need to use is `mosi-pin = <8>;` within your SPI configuration if building for the nice!nano. For more guidance on configuring LEDs: https://zmk.dev/docs/features/underglow
+Another config option that's necessary for the nice!view to work properly is the following line to be included in the `sofle.conf` file of your config repository:
+
+```
+CONFIG_ZMK_DISPLAY_WORK_QUEUE_DEDICATED=y
+```
+Without this config option, your keyboard may freeze, experience lag, or have connection issues. This option may be set as a default in the future, but at the time of writing this, it is not defaulted yet.
+
+### RGB Config ###
+
+For setting up RGB LEDs, the controller pin used for these corresponds to pin 8 of the nice!nano (Arduino Digital 0 / D0 Pro Micro pin), so if using a nice!nano, the LED config line you would need to use is `mosi-pin = <8>;` within your SPI configuration if building for the nice!nano. Also, note that since there are 30 LEDs on the Sofle Choc Wireless, you would use `chain-length = <30>;`. For more guidance on configuring LEDs, refer to the ZMK documentation for this topic: https://zmk.dev/docs/features/underglow.
 
 
 ## Troubleshooting
