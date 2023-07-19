@@ -21,12 +21,12 @@ The encoders in the first picture were hot-swapped for Choc switches in the seco
 This allows for more build flexibility to change up your build, and as an added bonus, you can test out different rotary encoder options without soldering them in until you find one that you like.
 
 ## Disclaimer
-This is a prototype keyboard, so it comes with no guarantees. There may be changes to it in the future to fix problems or add features.
+This is a prototype keyboard, so it comes with no guarantees. There may be changes to it in the future to fix problems or add features. That being said, it functions as intended for my own standards, so if you like the design, feel free to get a PCB made and build it for yourself!
 
 ## Differences from Sofle Choc (wired) keyboard
 - Added power switch to connect/disconnect battery power to RAW pin of microcontroller
 - Added JST connector for battery connection
-- [nice!view](https://nicekeyboards.com/docs/nice-view/) display support
+- [nice!view](https://nicekeyboards.com/docs/nice-view/) display support *(still supports common OLED displays as well)*
 - Encoder can be swapped with a Choc switch on either half
     - These can both be hot-swapped if Mill-Max sockets are installed
 - Added a bottom plate PCB to allow for more build options

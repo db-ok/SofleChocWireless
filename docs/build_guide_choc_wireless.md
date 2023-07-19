@@ -108,10 +108,10 @@ This option will work with most LiPo batteries that have a JST connector (JST PH
 - **Rotary encoders**
 
     - **1 or 2 Rotary encoders EC11** - If you're not sure, take EC11E. Some other variants (EC11K) may have some additional plastic pins and require mounting holes for them which are not included on the PCB. Some encoders do not include a push-button switch, so look for encoders that include this feature when buying if you want that functionality.
-      - A few encoder options:
-          - [Bourns PEC11L-4115F-S0020](https://www.digikey.com/en/products/detail/bourns-inc/PEC11L-4115F-S0020/4699168) - a low-profile option that has a push-button switch, and fairly strong detents (detents are the "tactile bumps" when you twist the knob). Has a D-shaped shaft and the base is black plastic, which looks better than most other options, which are usually green. These may come with a mounting washer and nut, but they are not necessary.
-          - Amazon option: https://www.amazon.com/gp/product/B0177VGSQY - low profile, even shorter shaft than the above Bourns option, but the height that the knob will sit on this one is about the same as the above Bourns low-profile encoder, so the overall height is almost identical. This one is significantly easier to turn because the detents are less forceful, but it gives less of a tactile feel during rotation. It has a D-shaped shaft and a green plastic base.
-          - [TT Electronics EN11-HSB1AF15](https://www.digikey.com/en/products/detail/tt-electronics-bi/EN11-HSB1AF15/2408764) - Not quite as low-profile as either of the above options, but otherwise a good option. It has a smooth rotation feel, and is significantly easier to turn than the Bourns. The detents have more of a rounded bump to them. Has a D-shaped shaft and a green plastic base. Also of note is that this model is oriented in the opposite rotation direction as the other two options in terms of the electrical signals it produces, but this is not an issue, as your keymap can be configured to simply swap the left and right rotation key mappings as needed, in order to match the key mapping to the proper rotation direction.
+      - A couple of encoder options:
+          - [TT Electronics EN11-HSB1AF15](https://www.digikey.com/en/products/detail/tt-electronics-bi/EN11-HSB1AF15/2408764) - Not super low-profile, but an excellent option. It has a smooth rotation feel, and is fairly easy to turn. The detents have a rounded bump to them. Has a D-shaped shaft and a green plastic base. Also of note is that this model is oriented in the opposite rotation direction as some other encoders in terms of the electrical signals it produces, but this is not an issue, as your keymap can be configured to simply swap the left and right rotation key mappings as needed, in order to match the key mapping to the proper rotation direction. Important spec for ZMK firmware configuration: 20 pulses per rotation.
+          - Amazon option: https://www.amazon.com/gp/product/B0177VGSQY - about as low profile as you can go while also having an integrated push-button switch and a D-shaped shaft that fits readily available knobs. This one is even easier to turn than the TT Electronics model. The detents are less forceful, so it gives less of a tactile feel during rotation. It has a D-shaped shaft and a green plastic base. Build quality seems lower than the TT Electronics model, but the overall height is also a little lower if you're trying to achieve a lower profile build. Pulses per rotation: unknown (no data sheet provided).
+
     
     - **Matching knobs** - for each encoder. Make sure the knob matches the encoder's shaft diameter, depth and shape. All of the above encoder options will fit knobs with a 6mm shaft opening. Encoder shafts can be either D-shaped or knurled, which require the corresponding type of knobs to fit them. Knobs up to 20mm in diamater will fit without bumping into any of the keys or the (optional) OLED cover. A larger knob may even be possible to install, but I have not tried one larger than 20mm, since it comes within 1 or 2mm of the the OLED cover. A larger knob will result in the encoder feeling easier to turn, which I find preferable over a smaller diameter. 
     
@@ -258,7 +258,7 @@ With the button placed onto the PCB, heat up one of the pads and feed solder int
 ### Microcontroller
 
 There are various options for how the microcontroller can be installed. Here, we'll describe just a couple of those options:
-1. The Sprint Pin Header option
+1. The Spring Pin Header option
 2. The Socket option
 
 #### Spring Pin Header option
