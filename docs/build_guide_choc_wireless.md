@@ -405,9 +405,38 @@ Without this config option, your keyboard may freeze, experience lag, or have co
 For setting up RGB LEDs, the controller pin used for these corresponds to pin 8 of the nice!nano (Arduino Digital 0 / D0 Pro Micro pin), so if using a nice!nano, the LED config line you would need to use is `mosi-pin = <8>;` within your SPI configuration if building for the nice!nano. Also, note that since there are 30 LEDs on the Sofle Choc Wireless, you would use `chain-length = <30>;`. For more guidance on configuring LEDs, refer to the ZMK documentation for this topic: https://zmk.dev/docs/features/underglow.
 
 
+### Example zmk-config repository and useful firmware tips
+Common configurations are set up in this repo: https://github.com/db-ok/zmk-config-soflechocwireless
+
+#### Basic config
+The `main` branch is the "stock" configuration/keymap*, with the OLED and rotary encoder configuration options enabled in the .conf file.
+*Note that OLED displays have a slight issue when a firmware is first flashed (at least for the nice!nano). The external power defaults to OFF for devices such as the OLED display, so you must turn it on after flashing the firmware in order for the display to turn on. In addition to that, the screen may not turn on right away, even after toggling the power, so after toggling the external power ON, wait about 1 minute, then reset each half of the keyboard. At this point, the screen should turn on. After that, I recommend avoiding toggling the external power OFF, as it may not turn on again after toggling it to OFF. Hopefully, this will get fixed in a future ZMK release.*
+
+*The exception to the default keymap is that the `&ext_power EP_TOG` included, as it is necessary to turn on the external power used by the OLED.
+
+-- `main` branch: https://github.com/db-ok/zmk-config-soflechocwireless/tree/main
+
+
+#### OLED and RGB config
+The `oled-rgb` branch is set up to build firmware that enables the OLED display and the RGB underglow lighting. It includes the necessary config options to enable these features, and a keymap for the RGB toggle so that you can turn the RGB light on or off on demand. The RGB config is contained in the keymap, along with comments about why this is done that way. In the future, the RGB config may be done some other way, as this is kind of a workaround for the nice!nanoV2 currently. You may also want to add more controls for the RGB lighting on your keymap. If so, refer to https://zmk.dev/docs/behaviors/underglow for the RGB lighting behavior keymap options so that you can add those controls to your keymap.
+
+*See above description of the Basic config for description of how to get the OLED display working after flashing the firmware.*
+
+-- `oled-rgb` branch: https://github.com/db-ok/zmk-config-soflechocwireless/tree/oled-rgb
+
+#### nice!view config
+The `niceview` branch is an example of a firmware that enables the nice!view display without RGB lighting. This is a great configuration for long battery life while still having the benefits of the display.
+
+-- `niceview` branch: https://github.com/db-ok/zmk-config-soflechocwireless/tree/niceview
+
+#### nice!view with RGB config
+The `niceview-rgb` branch is an example of a configuration that supports both a nice!view display and RGB lighting.
+
+-- `niceview-rgb` branch: https://github.com/db-ok/zmk-config-soflechocwireless/tree/niceview-rgb
+
 ## Troubleshooting
 
-Refer to the build guide for hardware troubleshooting. The ZMK discord is also very helpful for firmware and keymap questions.
+Refer to the build guide for hardware troubleshooting. The [ZMK discord](https://discord.gg/WxGbYWEtsw) is also very helpful for firmware and keymap questions.
 
 
 ## Links

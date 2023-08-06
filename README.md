@@ -52,6 +52,11 @@ Firmware-related info for display and LED features:
   - This PCB has a chip select (CS) pin for the nice!view display that uses Arduino Digital 1 (D1 Pro Micro pin), which corresponds to P0.06/006 on the nice!nano. This is the default pin used by the nice!view, which makes it easier to configure. See build guide "Firmware and programming" section for more info on building firmware that supports the nice!view.
   - The RGB LED pin is relocated to Arduino Digital 0 (D0 Pro Micro pin), which corresponds to P0.08/008 on the nice!nano
 
+### Example config repository
+There is a zmk-config example repository where each branch has a different combination of options (OLED, niceview, RGB) enabled:
+https://github.com/db-ok/zmk-config-soflechocwireless
+
+
 ## Build Guide
 
 Please read the entire build guide before ordering any parts, as there are some options to consider:
