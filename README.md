@@ -39,8 +39,6 @@ This is a prototype keyboard, so it comes with no guarantees. There may be chang
 ## Encoder Support
 The PCB supports a rotary encoder or a Choc switch in the same location on either half, and *either one can use Mill-Max sockets*. If you don't want to use Mill-Max sockets, you can hard-solder either a rotary encoder or a Choc switch into either side.
 
-*Rotary encoder support on the peripheral side is dependent on firmware, but there are some PRs in the ZMK repository that will reportedly support encoders on both sides of a split keyboard, although it is not officially supported by ZMK.*
-
 ## Display Support
 The PCB supports either a 4-pin OLED screen commonly found on DIY keyboards, or the 5-pin [nice!view](https://nicekeyboards.com/docs/nice-view/) low power usage display.
 
